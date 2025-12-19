@@ -1,0 +1,27 @@
+{
+  "name": "Messages/Blessings App",
+  "description": "A simple web application for viewing and submitting blessings/messages",
+  "keywords": ["python", "flask", "web-app"],
+  "website": "",
+  "repository": "",
+  "logo": "",
+  "success_url": "/",
+  "env": {
+    "FLASK_APP": {
+      "description": "The name of the Flask application.",
+      "value": "server.py"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
