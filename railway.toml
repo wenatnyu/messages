@@ -1,6 +1,6 @@
 [build]
-builder = "nixpacks"
+builder = "heroku/buildpacks:20"
 
 [deploy]
-startCommand = "./start.sh"
+startCommand = "python server.py"
 restartPolicyType = "never"
