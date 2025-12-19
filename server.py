@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, make_response
 from flask_cors import CORS
 import json
 import os
@@ -33,20 +33,29 @@ def write_messages(messages):
     except Exception as e:
         print(f"Error writing messages: {e}")
 
-# Serve static files
+# Serve static files with proper headers
 @app.route('/')
 def serve_index():
-    return send_from_directory('.', 'index.html')
+    response = make_response(send_from_directory('.', 'index.html'))
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
+    return response
 
 @app.route('/<path:path>')
 def serve_static(path):
-    return send_from_directory('.', path)
+    if path == 'robots.txt':
+        return send_from_directory('.', 'robots.txt')
+    
+    response = make_response(send_from_directory('.', path))
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
+    return response
 
 # API endpoints
 @app.route('/api/messages', methods=['GET'])
 def get_messages():
     messages = read_messages()
-    return jsonify(messages)
+    response = jsonify(messages)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route('/api/messages', methods=['POST'])
 def add_message():
@@ -70,7 +79,9 @@ def add_message():
         messages.append(new_message)
         write_messages(messages)
         
-        return jsonify(new_message), 201
+        response = jsonify(new_message)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response, 201
     except Exception as e:
         print(f"Error adding message: {e}")
         return jsonify({'error': 'Internal server error'}), 500
