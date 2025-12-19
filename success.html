@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交成功</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>提交成功</h1>
+        </header>
+        
+        <main>
+            <div class="success-message">
+                <h2>感谢您的祝福！</h2>
+                <p>您的祝福已成功提交并会展示在祝福墙上。</p>
+                
+                <div class="share-section">
+                    <h3>分享给更多朋友</h3>
+                    <p>让更多人一起传递祝福</p>
+                    <div class="share-buttons">
+                        <button class="btn-share" onclick="shareToWeChat()">微信分享</button>
+                        <button class="btn-share" onclick="shareToQQ()">QQ分享</button>
+                        <button class="btn-share" onclick="copyLink()">复制链接</button>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button onclick="location.href='index.html'" class="btn-primary">查看所有祝福</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="success.js"></script>
+</body>
+</html>

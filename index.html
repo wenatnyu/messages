@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝福墙</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>祝福墙</h1>
+            <p>查看来自其他用户的祝福</p>
+        </header>
+        
+        <main>
+            <div id="messages-container">
+                <!-- Messages will be loaded here dynamically -->
+                <div class="loading">正在加载祝福...</div>
+            </div>
+            
+            <div class="actions">
+                <button onclick="location.href='submit.html'" class="btn-primary">提交我的祝福</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
