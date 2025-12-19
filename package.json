@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A simple web application for viewing and submitting blessings/messages",
   "scripts": {
-    "start": "python server.py",
-    "dev": "python server.py"
+    "start": "python3 server.py",
+    "dev": "python3 server.py"
   },
   "keywords": [
     "messages",
