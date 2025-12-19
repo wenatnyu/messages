@@ -59,10 +59,11 @@ The application consists of three main pages as described above. The backend pro
 ### Deploying to Railway
 
 1. Sign up for an account at [Railway.app](https://railway.app/)
-2. Install the Railway CLI: 
+2. Install the Railway CLI (if not already installed):
    ```
    npm install -g @railway/cli
    ```
+   If you don't have npm installed, you can install it via [Node.js](https://nodejs.org/)
 3. Login to Railway:
    ```
    railway login
